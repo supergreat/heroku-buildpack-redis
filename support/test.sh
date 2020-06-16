@@ -14,7 +14,7 @@ else
     BUILD_IMAGE="${RUNTIME_IMAGE}-build"
 fi
 
-OUTPUT_IMAGE="redis-stunnel-test-${STACK}"
+OUTPUT_IMAGE="stunnel-test-${STACK}"
 
 echo "Building buildpack on stack ${STACK}..."
 
@@ -27,8 +27,8 @@ docker build \
 
 echo "Checking the start-stunnel wrapper works and stunnel can start..."
 
-# Ideally this would check the value of REDIS_URL, however bugs in start-tunnel make
-# testing this annoying (eg https://github.com/heroku/heroku-buildpack-redis/issues/13
+# Ideally this would check the value of FAKTORY_URL/REDIS_URL, however bugs in start-tunnel
+# make testing this annoying (eg https://github.com/heroku/heroku-buildpack-redis/issues/13
 # and hangs if I try to capture the output), but this is better than nothing for now.
 TEST_COMMAND="bin/start-stunnel bash -c 'sleep 2 && env && cat /app/vendor/stunnel/stunnel.conf'"
 docker run \
