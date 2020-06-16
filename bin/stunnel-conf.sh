@@ -6,11 +6,11 @@ mkdir -p /app/vendor/stunnel/var/run/stunnel/
 
 cat > /app/vendor/stunnel/stunnel.conf << EOFEOF
 foreground = yes
-
 pid = /app/vendor/stunnel/stunnel4.pid
-
 socket = r:TCP_NODELAY=1
+sslVersion = all
 options = NO_SSLv3
+fips=no
 TIMEOUTidle = 86400
 ciphers = HIGH:!ADH:!AECDH:!LOW:!EXP:!MD5:!3DES:!SRP:!PSK:@STRENGTH
 debug = ${STUNNEL_LOGLEVEL:-notice}
