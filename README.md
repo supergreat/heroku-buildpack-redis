@@ -10,7 +10,7 @@ conjunction with other buildpacks.
 Set this buildpack as your initial buildpack with:
 
 ```console
-$ heroku buildpacks:add -i 1 supergreat/stunnel
+$ heroku buildpacks:add -i 1 supergreat/heroku-buildpack-stunnel
 ```
 
 Confirm that you are using this buildpack as well as your language buildpack like so:
